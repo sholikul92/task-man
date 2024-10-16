@@ -1,12 +1,13 @@
+import { User } from "./user.model.js";
 const user = new User()
 const btnRegister = document.getElementById('btn-register');
 const btnLogin = document.getElementById('btn-login')
 
 btnRegister?.addEventListener('click', (e) => {
   e.preventDefault();
-
+  
   const username = document.getElementById('username').value;
-
+  
   const users = user.getUsers();
     
   const userExist = users.find(user => user.username === username);
@@ -17,7 +18,7 @@ btnRegister?.addEventListener('click', (e) => {
     if (userExist) {
       throwErrorMessage("Username sudah terdaftar!")
     } else {
-      const result = userRegist.saveUser({username})
+      const result = user.saveUser({username})
       if (result.success) {
         window.location.href = "../../pages/login.html"
       }
@@ -37,6 +38,7 @@ btnLogin?.addEventListener('click', (e) => {
     throwErrorMessage("Username tidak boleh kosong!")
   } else {
     if (userExists) {
+      localStorage.setItem("userLoggedIn", userExists.username);
       window.location.href = "../../pages/dashboard.html";
     } else {
       throwErrorMessage("Username tidak terdaftar!")
