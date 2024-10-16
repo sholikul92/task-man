@@ -1,6 +1,7 @@
-class User {
+export class User {
+  #users
   constructor() {
-    this.users = this.getUsers() || [];
+    this.#users = this.getUsers() || []
   }
 
   saveUser(data) {
@@ -9,8 +10,8 @@ class User {
       ...data,
     }
 
-    this.users.push(userData);
-    localStorage.setItem('users', JSON.stringify(this.users));
+    this.#users.push(userData);
+    localStorage.setItem('users', JSON.stringify(this.#users));
 
     return {
       success : true
