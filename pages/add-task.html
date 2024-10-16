@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Man | Add Task</title>
+  <link rel="icon" href="../public/img/task-man.svg">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-[#E9EDF2]">
+  <header class="bg-white p-4 flex justify-between  px-24 fixed top-0 right-0 left-0">
+    <a href="task.html">
+      <button class="border py-2 px-8 rounded-full text-gray-700 font-semibold hover:bg-gray-50">Manage Task</button>
+    </a>
+    <div class="flex items-center gap-4">
+      <p class="text-xl">Halo, <span class="font-semibold" id="username"></span></p>
+      <img src="../public/img/profile.svg" alt="user-profile" class="w-12">
+    </div>
+  </header>
+  <main class="m-4 mx-48 mt-32">
+    <section class="flex flex-col items-center">
+      <h1 class="text-4xl font-bold">Add New Task</h1>
+      <p class="text-gray-700">Set goals to develop yourself</p>
+    </section>
+    <section class="flex justify-center mt-12">
+      <form id="form-add-task" method="POST" class="bg-white w-96 flex flex-col p-8 rounded-2xl gap-2">
+        <label for="task-name" class="text-xl font-semibold">Task Name</label>
+        <div class="relative">
+          <img src="../public/img/pencil.svg" alt="add-task" class="w-5 absolute top-2.5 left-3">
+          <input type="text" name="task-name" id="task-name" placeholder="type task name" class="border p-2 rounded-full focus:outline-blue-500 w-full pl-10">
+        </div>
+        <label for="priority-level" class="text-xl font-semibold">Priority Level</label>
+        <div class="relative">
+          <img src="../public/img/stack-layer.svg" alt="level" class="w-5 absolute top-2 left-3">
+          <select name="priority-level" id="priority-level" class="border p-2 bg-white rounded-full w-full pl-10 focus:outline-blue-500">
+            <option value="" disabled selected hidden>Select the level of task</option>
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+          </select>
+        </div>
+        <label for="date-deadline" class="text-xl font-semibold">Deadline</label>
+        <input type="date" min="2024-10-17" max="2030-12-30" name="date-deadline" id="date-deadline" class="w-full border p-2 rounded-full focus:outline-blue-500">
+      
+        <button class="bg-gradient-to-b from-blue-500 to-[#2847F9] p-2 rounded-full text-white font-semibold mt-8">Save New Task</button>
+      </form>
+    </section>
+    
+  </main>
+</body>
+
+<script>
+  const username = localStorage.getItem('userLoggedIn');
+  document.getElementById('username').innerText = username
+</script>
+
+</html>
