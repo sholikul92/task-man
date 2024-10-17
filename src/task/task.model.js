@@ -1,17 +1,36 @@
 class Task {
   #tasks;
   constructor() {
-    this.#tasks = getTasks();
+    this.#tasks = this.getTasks() || [];
   }
 
   saveTask(data) {
     const taskData = {
-      id : Date.now,
+      id : Date.now(),
+      inProgress: true,
       ...data
     }
+
+    this.#tasks.push(taskData)
+    localStorage.setItem('tasks', JSON.stringify(this.#tasks))
   }
 
   getTasks(){
-    return localStorage.getItem("tasks")
+    return JSON.parse(localStorage.getItem("tasks")) || []
+  }
+
+  deleteTask(id) {
+    const indexTask = this.#tasks.findIndex(task => task.id === id);
+    
+    if (indexTask !== -1) {
+      this.#tasks.splice(indexTask, 1);
+      this.updateLocalStorage()
+    }
+  }
+  
+  updateLocalStorage() {
+    localStorage.setItem('tasks', JSON.stringify(this.#tasks))
   }
 }
+
+export const task = new Task()
