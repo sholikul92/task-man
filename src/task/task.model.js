@@ -27,6 +27,15 @@ class Task {
       this.updateLocalStorage()
     }
   }
+
+  completedTask(id) {
+    const indexTask = this.#tasks.findIndex(task => task.id === id);
+
+    if (indexTask !== -1) {
+      this.#tasks[indexTask].inProgress = false;
+      this.updateLocalStorage()
+    }
+  }
   
   updateLocalStorage() {
     localStorage.setItem('tasks', JSON.stringify(this.#tasks))
