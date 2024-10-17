@@ -21,26 +21,26 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="bg-white p-4 rounded-2xl flex items-center justify-between">
           <div>
             <h2 class="text-2xl font-semibold">${task.taskName}</h2>
-            <p>Deadline : ${task.dateDeadline}</p>
+            <p class="text-gray-600">Deadline : ${task.dateDeadline}</p>
             <div class="flex gap-4 mt-4">
               <div class="flex gap-1">
                 <img src="../public/img/high-level.svg" alt="high-level" class="w-6">
-                <p>${task.priorityLevel}</p>
+                <p class="text-gray-600">${task.priorityLevel}</p>
               </div>
               ${task.inProgress?
                 `<div class="flex gap-1">
                   <img src="../public/img/in-progress.svg" alt="in-progress" class="w-4">
-                  <p>In Progres</p>
+                  <p class="text-gray-600">In Progres</p>
                 </div>`
                 : 
                 `<div class="flex gap-1">
                   <img src="../public/img/completed-task.svg" alt="in-progress" class="w-5">
-                  <p>Finished</p>
+                  <p class="text-gray-600">Finished</p>
                 </div>`
               } 
             </div>
           </div>
-          <div class="flex gap-4">
+          <div class="flex gap-4 flex-col md:flex-row">
               <button class="btn-delete border border-red-600 text-red-600 py-1 px-4 rounded-full" id="btn-delete-${task.id}">Delete</button>
               <button class="bg-gradient-to-b from-blue-500 to-[#2847F9] text-white py-1 px-4 rounded-full" id="completed-task-${task.id}">Complete</button>
           </div>
