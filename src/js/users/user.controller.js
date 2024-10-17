@@ -20,7 +20,7 @@ btnRegister?.addEventListener('click', (e) => {
     } else {
       const result = user.saveUser({username})
       if (result.success) {
-        window.location.href = "../../pages/login.html"
+        window.location.href = "../../src/pages/login.html"
       }
     }
   }
