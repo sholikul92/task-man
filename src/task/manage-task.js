@@ -42,7 +42,11 @@ document.addEventListener('DOMContentLoaded', () => {
           </div>
           <div class="flex gap-4 flex-col md:flex-row">
               <button class="btn-delete border border-red-600 text-red-600 py-1 px-4 rounded-full" id="btn-delete-${task.id}">Delete</button>
-              <button class="bg-gradient-to-b from-blue-500 to-[#2847F9] text-white py-1 px-4 rounded-full" id="completed-task-${task.id}">Complete</button>
+              ${task.inProgress?
+                `<button class="bg-gradient-to-b from-blue-500 to-[#2847F9] text-white py-1 px-4 rounded-full" id="completed-task-${task.id}">Complete</button>`
+                :
+                `<button class="hidden bg-gradient-to-b from-blue-500 to-[#2847F9] text-white py-1 px-4 rounded-full" id="completed-task-${task.id}">Complete</button>`
+              }
           </div>
         </div>
         `
