@@ -24,8 +24,8 @@ document.addEventListener('DOMContentLoaded', () => {
             <p class="text-gray-600">Deadline : ${task.dateDeadline}</p>
             <div class="flex gap-4 mt-4">
               <div class="flex gap-1">
-                <img src="../public/img/high-level.svg" alt="high-level" class="w-6">
-                <p class="text-gray-600">${task.priorityLevel}</p>
+                <img src="../public/img/high-level.svg" alt="high-level" class="w-6" id="level-priority">
+                <p class="text-gray-600" id="level">${task.priorityLevel}</p>
               </div>
               ${task.inProgress?
                 `<div class="flex gap-1">
@@ -68,6 +68,9 @@ document.addEventListener('DOMContentLoaded', () => {
           const tasksUpdate = instanceTask.getTasks();
           renderPage(tasksUpdate);
         })
+
+        const level = itemTask.querySelector('p#level').textContent;
+        itemTask.querySelector('img#level-priority').setAttribute('src', `../../public/img/${level}-level.svg`)
       })
     }
   }
