@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
   const renderPage = (tasks = taskExist) => {
     if (tasks.length === 0){
-      taskWrapperEmpty.classList.remove('hidden');
+      taskWrapperEmpty.classList.replace('hidden', 'flex');
       taskWrapper.classList.add('hidden');
     } else {
       taskWrapper.innerHTML = '';
