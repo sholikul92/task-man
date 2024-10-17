@@ -33,71 +33,8 @@
     </section>
 
     <!-- tasks -->
-    <section id="task-wrapper" class="mt-4 flex flex-col gap-4">
-      <section class="bg-white p-4 rounded-2xl flex items-center justify-between">
-        <div>
-          <h2 class="text-2xl font-semibold">Judul Task</h2>
-          <p>deadline</p>
-          <div class="flex gap-4 mt-4">
-            <div class="flex gap-1">
-              <img src="../public/img/high-level.svg" alt="high-level" class="w-6">
-              <p>high</p>
-            </div>
-            <div class="flex gap-1">
-              <img src="../public/img/in-progress.svg" alt="in-progress" class="w-4">
-              <p>in progres</p>
-            </div>
-          </div>
-        </div>
-        <div class="flex gap-4">
-          <button class="border border-red-600 text-red-600 py-1 px-4 rounded-full">Delete</button>
-          <button class="bg-gradient-to-b from-blue-500 to-[#2847F9] text-white py-1 px-4 rounded-full">Complete</button>
-        </div>
-      </section>
-
-      <section class="bg-white p-4 rounded-2xl flex items-center justify-between">
-        <div>
-          <h2 class="text-2xl font-semibold">Judul Task</h2>
-          <p>deadline</p>
-          <div class="flex gap-4 mt-4">
-            <div class="flex gap-1">
-              <img src="../public/img/medium-level.svg" alt="medium-level" class="w-6">
-              <p>medium</p>
-            </div>
-            <div class="flex gap-1">
-              <img src="../public/img/in-progress.svg" alt="in-progress" class="w-4">
-              <p>in progres</p>
-            </div>
-          </div>
-        </div>
-        <div class="flex gap-4">
-          <button class="border border-red-600 text-red-600 py-1 px-4 rounded-full">Delete</button>
-          <button class="bg-gradient-to-b from-blue-500 to-[#2847F9] text-white py-1 px-4 rounded-full">Complete</button>
-        </div>
-      </section>
-
-      <section class="bg-white p-4 rounded-2xl flex items-center justify-between">
-        <div>
-          <h2 class="text-2xl font-semibold">Judul Task</h2>
-          <p>deadline</p>
-          <div class="flex gap-4 mt-4">
-            <div class="flex gap-1">
-              <img src="../public/img/low-level.svg" alt="low-level" class="w-6">
-              <p>low</p>
-            </div>
-            <div class="flex gap-1">
-              <img src="../public/img/completed-task.svg" alt="in-progress" class="w-5">
-              <p>completed</p>
-            </div>
-          </div>
-        </div>
-        <div class="flex gap-4">
-          <button class="border border-red-600 text-red-600 py-1 px-4 rounded-full">Delete</button>
-          <button class="bg-gradient-to-b from-blue-500 to-[#2847F9] text-white py-1 px-4 rounded-full">Complete</button>
-        </div>
-      </section>
-    </section>
-    <section id="task-wrapper-empty" class="mt-16 flex flex-col items-center" >
+    <section id="task-wrapper" class="hidden flex flex-col gap-4 mt-8"></section>
+    <section id="task-wrapper-empty" class="hidden flex flex-col items-center mt-24" >
       <div class="bg-white w-96 p-4 rounded-2xl flex flex-col items-center gap-4">
         <img src="../public/img/task-empty.svg" alt="" class="w-24">
         <h2 class="text-2xl font-semibold">Oops! No Task</h2>
@@ -108,10 +45,9 @@
       </div>
     </section>
   </main>
+
+  <script type="module" src="../src/task/task.helper.js"></script>
+  <script type="module" src="../src/task/manage-task.js"></script>
 </body>
 
-<script>
-  const username = localStorage.getItem('userLoggedIn');
-  document.getElementById('username').innerText = username
-</script>
 </html>
