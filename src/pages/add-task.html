@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Task Man | Add Task</title>
-  <link rel="icon" href="../public/img/task-man.svg">
+  <link rel="icon" href="../../public/img/task-man.svg">
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
@@ -16,7 +16,7 @@
     </a>
     <div class="flex items-center md:gap-4">
       <p class="text-xl">Halo, <span class="font-semibold" id="username"></span></p>
-      <img src="../public/img/profile.svg" alt="user-profile" class="w-12">
+      <img src="../../public/img/profile.svg" alt="user-profile" class="w-12">
     </div>
   </header>
   <main class="m-4 md:mx-48 mt-32">
@@ -28,12 +28,12 @@
       <form id="form-add-task" method="POST" class="bg-white w-96 flex flex-col p-8 rounded-2xl gap-2">
         <label for="task-name" class="text-xl font-semibold">Task Name</label>
         <div class="relative">
-          <img src="../public/img/pencil.svg" alt="add-task" class="w-5 absolute top-2.5 left-3">
+          <img src="../../public/img/pencil.svg" alt="add-task" class="w-5 absolute top-2.5 left-3">
           <input type="text" name="task-name" id="task-name" placeholder="type task name" class="border p-2 rounded-full focus:outline-blue-500 w-full pl-10">
         </div>
         <label for="priority-level" class="text-xl font-semibold">Priority Level</label>
         <div class="relative">
-          <img src="../public/img/stack-layer.svg" alt="level" class="w-5 absolute top-2 left-3">
+          <img src="../../public/img/stack-layer.svg" alt="level" class="w-5 absolute top-2 left-3">
           <select name="priority-level" id="priority-level" class="border p-2 bg-white rounded-full w-full pl-10 focus:outline-blue-500">
             <option value="" disabled selected hidden>Select the level of task</option>
             <option value="low">Low</option>
@@ -51,7 +51,7 @@
   </main>
 </body>
 
-<script type="module" src="../src/task/add-task.js"></script>
-<script type="module" src="../src/task/task.helper.js"></script>
+<script type="module" src="../js/task/add-task.js"></script>
+<script type="module" src="../js/task/task.helper.js"></script>
 
 </html>

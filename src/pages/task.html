@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Task Management</title>
-  <link rel="icon" href="../public/img/task-man.svg">
+  <link rel="icon" href="../../public/img/task-man.svg">
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-[#E9EDF2]">
@@ -14,11 +14,11 @@
         type="text" 
         placeholder="Search task" 
         class="border p-1 rounded-2xl pr-8 w-full">
-      <img src="../public/img/search.svg" alt="search" class="w-6 absolute top-1 right-2">
+      <img src="../../public/img/search.svg" alt="search" class="w-6 absolute top-1 right-2">
     </div>
     <div class="flex items-center gap-2">
       <p class="text-xl">Halo, <span class="font-semibold" id="username"></span></p>
-      <img src="../public/img/profile.svg" alt="user-profile" class="w-12">
+      <img src="../../public/img/profile.svg" alt="user-profile" class="w-12">
     </div>
   </header>
   <main class="m-4 md:mx-48 md:mt-32 mt-24">
@@ -36,7 +36,7 @@
     <section id="task-wrapper" class="flex flex-col gap-4 mt-8"></section>
     <section id="task-wrapper-empty" class="hidden flex flex-col items-center mt-24" >
       <div class="bg-white md:w-96 p-4 rounded-2xl flex flex-col items-center gap-4 py-12">
-        <img src="../public/img/task-empty.svg" alt="" class="w-24">
+        <img src="../../public/img/task-empty.svg" alt="" class="w-24">
         <h2 class="text-2xl font-semibold">Oops! No Task</h2>
         <p class="text-gray-600">You need to create some tasks to do</p>
         <a href="add-task.html">
@@ -49,5 +49,8 @@
   <script type="module" src="../src/task/task.helper.js"></script>
   <script type="module" src="../src/task/manage-task.js"></script>
 </body>
+
+<script type="module" src="../js/task/manage-task.js"></script>
+<script type="module" src="../js/task/task.helper.js"></script>
 
 </html>

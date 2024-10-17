@@ -24,12 +24,12 @@ document.addEventListener('DOMContentLoaded', () => {
             <p class="text-gray-600">Deadline : ${task.dateDeadline}</p>
             <div class="flex gap-4 mt-4">
               <div class="flex gap-1">
-                <img src="../public/img/high-level.svg" alt="high-level" class="w-6" id="level-priority">
+                <img src="../../public/img/high-level.svg" alt="high-level" class="w-6" id="level-priority">
                 <p class="text-gray-600" id="level">${task.priorityLevel}</p>
               </div>
               ${task.inProgress?
                 `<div class="flex gap-1">
-                  <img src="../public/img/in-progress.svg" alt="in-progress" class="w-4">
+                  <img src="../../public/img/in-progress.svg" alt="in-progress" class="w-4">
                   <p class="text-gray-600">In Progres</p>
                 </div>`
                 : 
