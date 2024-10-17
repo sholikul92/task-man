@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
           </div>
           <div class="flex gap-4">
               <button class="btn-delete border border-red-600 text-red-600 py-1 px-4 rounded-full" id="btn-delete-${task.id}">Delete</button>
-              <button class="bg-gradient-to-b from-blue-500 to-[#2847F9] text-white py-1 px-4 rounded-full" id="${task.id}">Complete</button>
+              <button class="bg-gradient-to-b from-blue-500 to-[#2847F9] text-white py-1 px-4 rounded-full" id="completed-task-${task.id}">Complete</button>
           </div>
         </div>
         `
@@ -50,10 +50,17 @@ document.addEventListener('DOMContentLoaded', () => {
         taskWrapper.append(itemTask);
   
         itemTask.querySelector(`button#btn-delete-${task.id}`).addEventListener('click', (e) => {
-          
           e.preventDefault();
       
           instanceTask.deleteTask(task.id);
+          const tasksUpdate = instanceTask.getTasks();
+          renderPage(tasksUpdate);
+        })
+
+        itemTask.querySelector(`button#completed-task-${task.id}`).addEventListener('click', (e) => {
+          e.preventDefault();
+
+          instanceTask.completedTask(task.id);
           const tasksUpdate = instanceTask.getTasks();
           renderPage(tasksUpdate);
         })
