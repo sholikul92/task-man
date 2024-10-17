@@ -39,7 +39,7 @@ btnLogin?.addEventListener('click', (e) => {
   } else {
     if (userExists) {
       localStorage.setItem("userLoggedIn", userExists.username);
-      window.location.href = "../../src/pages/task.html";
+      window.location.href = "../../../index.html";
     } else {
       throwErrorMessage("Username tidak terdaftar!")
     }

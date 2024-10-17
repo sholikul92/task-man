@@ -28,6 +28,6 @@ formAddTask?.addEventListener('submit', (e) => {
 
   if(taskName.value !== '' && priorityLevel.value !== '' && dateDeadline.value !== ''){
     task.saveTask(newTask)
-    window.location.href = "../../src/pages/task.html"
+    window.location.href = "../../../index.html"
   }   
 })
